@@ -1,0 +1,141 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    top: 0;
+    width: 100%;
+    position: fixed;
+}
+nav{
+    display: flex;
+    justify-content: flex-end;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0);
+}
+nav ul{
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    width: 100%;
+    padding: 0 5%;
+}
+nav li{
+    padding: 0px 5px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+nav a{
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 0px 20px;
+    text-decoration: none;
+}
+svg{
+    fill: white;
+}
+
+.icon:hover{
+    height: 100%;
+    background-color: #f0f0f0;
+}
+nav li:first-child{
+    margin-right: auto;
+    padding: 0px 0px;
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+#sidebar-active, #sidebar-close{
+    display: none;
+}
+.menu-button, .close-buttton{
+    margin: 20px;
+    display: none;
+    
+}
+.hero{
+    position: relative;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    animation: slideInTop 0.5s ease-in;
+}
+.hero_img{
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 50%;
+    z-index: 999;
+    background-color: rgb(255, 255, 255);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+.close-buttton{
+    border-style: dashed;
+}
+.sidebar a{
+    display: flex;
+    justify-content: flex-start;
+    padding: 4%;
+    margin-right: auto;
+    font-size: 25px;
+    width: 100%;
+}
+.sidebar a:hover{
+    width: 100%;
+    background-color: #f0f0f0;
+}
+
+.menu{
+    font-weight: bold;
+    font-family: sans-serif;
+    color: black;
+    font-size: 20px;
+}
+.about{
+    height: 1000px;
+}
+@media(max-width:800px){
+    svg{
+        fill: black;
+    }
+    .icon{
+        display: none;
+    }
+    .menu-button{
+        display: block;
+    }
+    #sidebar-active:checked~.sidebar{
+        display: flex; 
+    }
+    #sidebar-close:checked~.sidebar{
+        display: none;
+    }
+}
+
+@keyframes slideInTop {
+    from{
+        transform: scale(1.5);
+    }
+    to{
+        transform: scale(1.0);
+    }
+}
