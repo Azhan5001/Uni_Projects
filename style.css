@@ -3,6 +3,8 @@
     margin: 0;
     padding: 0;
 }
+
+
 header{
     top: 0;
     width: 100%;
@@ -41,11 +43,12 @@ svg{
 .icon svg :hover{
     height: 100%;
     background-color: #f0f0f0;
+    
 }
 nav li:first-child{
     margin-right: auto;
     padding: 0px 0px;
-    font-size: 50px;
+    font-size: 300%;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
 }
@@ -55,9 +58,13 @@ nav li:first-child{
 .menu-button, .close-buttton{
     margin: 20px;
     display: none;
+    overflow: none;
     
 }
-.hero{
+.hero_group{
+    overflow: hidden;
+}
+.hero{   
     position: relative;
     z-index: -1;
     display: flex;
@@ -67,6 +74,7 @@ nav li:first-child{
     height: 100vh;
     overflow: hidden;
     animation: slideInTop 0.8s ease-in;
+    transform-origin:center center;
 }
 .hero_img{
     width: 100%;
@@ -110,6 +118,7 @@ nav li:first-child{
     font-size: 20px;
 }
 .about{
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -143,6 +152,9 @@ nav li:first-child{
 @media(max-width:500px){
     .sidebar{
         width: 100%;
+    }
+    nav li:first-child{
+        font-size: 200%;
     }
 }
 @keyframes slideInTop {
