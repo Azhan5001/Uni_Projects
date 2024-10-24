@@ -38,7 +38,7 @@ svg{
     fill: white;
 }
 
-.icon:hover{
+.icon svg :hover{
     height: 100%;
     background-color: #f0f0f0;
 }
@@ -66,11 +66,11 @@ nav li:first-child{
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    animation: slideInTop 0.5s ease-in;
+    animation: slideInTop 0.8s ease-in;
 }
 .hero_img{
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 .sidebar{
@@ -101,7 +101,6 @@ nav li:first-child{
 }
 .sidebar a:hover{
     width: 100%;
-    background-color: #f0f0f0;
 }
 
 .menu{
@@ -111,11 +110,22 @@ nav li:first-child{
     font-size: 20px;
 }
 .about{
-    height: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.about_content{
+    display: flex;
+    align-items: center;
+    height: 50%;
+    width: 100%;
+    background-color: rgb(129, 174, 226);
+    font-size: 50%;
 }
 @media(max-width:800px){
     svg{
-        fill: black;
+        fill: white;
     }
     .icon{
         display: none;
@@ -130,7 +140,11 @@ nav li:first-child{
         display: none;
     }
 }
-
+@media(max-width:500px){
+    .sidebar{
+        width: 100%;
+    }
+}
 @keyframes slideInTop {
     from{
         transform: scale(1.5);
