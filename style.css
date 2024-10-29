@@ -3,8 +3,6 @@
     margin: 0;
     padding: 0;
 }
-
-
 header{
     top: 0;
     width: 100%;
@@ -16,6 +14,7 @@ nav{
     height: 50px;
     background-color: rgba(255, 255, 255, 0);
 }
+
 nav ul{
     display: flex;
     justify-content: flex-end;
@@ -29,6 +28,10 @@ nav li{
     display: flex;
     align-items: center;
 }
+#common a{
+    color: black;
+    fill: black;
+}
 nav a{
     color: white;
     display: flex;
@@ -36,19 +39,17 @@ nav a{
     padding: 0px 20px;
     text-decoration: none;
 }
-svg{
-    fill: white;
-}
-
-.icon svg :hover{
+.icon:hover{
     height: 100%;
-    background-color: #f0f0f0;
-    
+    background-color: rgba(255, 255, 255, 0.288);
+}
+.icons{
+    fill: rgb(255, 255, 255);
 }
 nav li:first-child{
     margin-right: auto;
     padding: 0px 0px;
-    font-size: 300%;
+    font-size: 2.5em;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
 }
@@ -132,7 +133,93 @@ nav li:first-child{
     background-color: rgb(129, 174, 226);
     font-size: 50%;
 }
-@media(max-width:800px){
+
+/* CSS FOR ACCOUNT.HTML */
+#account{
+    display: flex;
+    justify-content: center;
+}
+#common{
+    background-color: white;
+}
+#registerBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ccc; /* Border color */
+    border-radius: 10px; /* Rounded corners */
+    height: 90%; /* Adjust height for better appearance */
+    width: 40%; /* Adjust width for better appearance */
+    margin-top: 4em;
+    padding: 2em; /* Fluid padding for inner spacing */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+    background-color: #ffffff; /* White background for the block */
+}
+
+#registerBlock h1, 
+#registerBlock h2, 
+#registerBlock p {
+    margin: 0.3em;
+    color: #333; /* Dark text color for contrast */
+    text-align: center; /* Center align text */
+}
+#registerForm{
+    display: none;
+}
+#registerForm table #loginForm table{
+    width: 100%; /* Full width */
+    margin-top: 2em; /* Space above the table */
+}
+
+#registerForm th, #loginForm th {
+    text-align: left; /* Align text to the left */
+    color: #666; /* Lighter color for labels */
+    padding: 1em;
+}
+
+#registerForm td input, #loginForm td input {
+    width: 100%; /* Full width input */
+    padding: 0.8em; /* Fluid padding for inputs */
+    border: 1px solid #ccc; /* Border for inputs */
+    border-radius: 0.5em; /* Rounded corners for inputs */
+    margin-top: 0.5em; /* Space above inputs */
+}
+
+#registerForm td{
+    text-align: center; /* Center align table cells */
+    padding-right: 10%;
+}
+
+#registerForm td button, #loginForm td button{
+    padding: 0.8em 1.5em; /* Fluid padding for buttons */
+    border: none; /* Remove default border */
+    border-radius: 0.5em; /* Rounded corners for buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    background-color: #007bff; /* Primary button color */
+    color: white; /* White text color */
+    margin: 2em 0.5em; /* Space around buttons */
+    transition: background-color 0.3s ease; /* Transition effect */
+}
+
+#registerForm td button:hover, #loginForm td button:hover{
+    background-color: #0056b3; /* Darker on hover */
+}
+
+#loginForm {
+    display: flex;
+    justify-content: center;
+    width: 100%; /* Full width */
+    margin-top: 2em;
+}
+
+#loginForm td{
+    text-align: center;
+    padding-left: 2%;
+}
+
+
+@media(max-width:700px){
     svg{
         fill: white;
     }
@@ -143,18 +230,38 @@ nav li:first-child{
         display: block;
     }
     #sidebar-active:checked~.sidebar{
-        display: flex; 
+        display: flex;
     }
     #sidebar-close:checked~.sidebar{
         display: none;
+    }
+    #registerForm th, #loginForm th{
+        display: none; /* Hide <th> elements */
+    }
+    table{
+        margin-right: 4em;
+    }
+    #registerForm td input{
+        margin: 0.2em; /* Center the input boxes */
+        width: 100%; /* Limit width for smaller screens */
+    }
+    #loginForm td input{
+        margin: 0.2em; /* Center the input boxes */
+        width: 80%; 
+    }
+    #registerBlock {
+        width: 70vw; /* Adjust block width for smaller screens */
+    }
+    .buttonTd{
+        padding-left: 2em;
+    }
+    #loginForm table, #registerForm table{
+        width: 100%;
     }
 }
 @media(max-width:500px){
     .sidebar{
         width: 100%;
-    }
-    nav li:first-child{
-        font-size: 200%;
     }
 }
 @keyframes slideInTop {

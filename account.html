@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <title>Fashion Website | Login/Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="account">
+    <header>
+        <nav id="common">
+            <ul>
+                <li><a class="logo" href="index.html">QUILS</a></li>
+            </ul>  
+            <input type="checkbox" id="sidebar-active">
+            <label for="sidebar-active" class="menu-button">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 490.667 490.667" style="enable-background:new 0 0 490.667 490.667;" xml:space="preserve" width="26"><g>    <path d="M469.333,224h-448C9.551,224,0,233.551,0,245.333c0,11.782,9.551,21.333,21.333,21.333h448 c11.782,0,21.333-9.551,21.333-21.333C490.667,233.551,481.115,224,469.333,224z"/>    <path d="M21.333,117.333h448c11.782,0,21.333-9.551,21.333-21.333s-9.551-21.333-21.333-21.333h-448C9.551,74.667,0,84.218,0,96 S9.551,117.333,21.333,117.333z"/>    <path d="M469.333,373.333h-448C9.551,373.333,0,382.885,0,394.667C0,406.449,9.551,416,21.333,416h448 c11.782,0,21.333-9.551,21.333-21.333C490.667,382.885,481.115,373.333,469.333,373.333z"/></g></svg>
+            </label>
+            <div class="sidebar">
+
+                <label for="sidebar-active" class="close-button"><svg width="30px" viewBox="0 -0.5 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.96967 16.4697C6.67678 16.7626 6.67678 17.2374 6.96967 17.5303C7.26256 17.8232 7.73744 17.8232 8.03033 17.5303L6.96967 16.4697ZM13.0303 12.5303C13.3232 12.2374 13.3232 11.7626 13.0303 11.4697C12.7374 11.1768 12.2626 11.1768 11.9697 11.4697L13.0303 12.5303ZM11.9697 11.4697C11.6768 11.7626 11.6768 12.2374 11.9697 12.5303C12.2626 12.8232 12.7374 12.8232 13.0303 12.5303L11.9697 11.4697ZM18.0303 7.53033C18.3232 7.23744 18.3232 6.76256 18.0303 6.46967C17.7374 6.17678 17.2626 6.17678 16.9697 6.46967L18.0303 7.53033ZM13.0303 11.4697C12.7374 11.1768 12.2626 11.1768 11.9697 11.4697C11.6768 11.7626 11.6768 12.2374 11.9697 12.5303L13.0303 11.4697ZM16.9697 17.5303C17.2626 17.8232 17.7374 17.8232 18.0303 17.5303C18.3232 17.2374 18.3232 16.7626 18.0303 16.4697L16.9697 17.5303ZM11.9697 12.5303C12.2626 12.8232 12.7374 12.8232 13.0303 12.5303C13.3232 12.2374 13.3232 11.7626 13.0303 11.4697L11.9697 12.5303ZM8.03033 6.46967C7.73744 6.17678 7.26256 6.17678 6.96967 6.46967C6.67678 6.76256 6.67678 7.23744 6.96967 7.53033L8.03033 6.46967ZM8.03033 17.5303L13.0303 12.5303L11.9697 11.4697L6.96967 16.4697L8.03033 17.5303ZM13.0303 12.5303L18.0303 7.53033L16.9697 6.46967L11.9697 11.4697L13.0303 12.5303ZM11.9697 12.5303L16.9697 17.5303L18.0303 16.4697L13.0303 11.4697L11.9697 12.5303ZM13.0303 11.4697L8.03033 6.46967L6.96967 7.53033L11.9697 12.5303L13.0303 11.4697Z" fill="#000000"/></svg></label>
+                <a class="menu" href="#">About</a>
+                <a class="menu" href="#">Categories</a>
+                <a class="menu" href="#">FAQ</a>
+            </div>   
+        </nav>
+    </header>
+    <div id="registerBlock">
+        <h1>MY QUILS ACCOUNT</h1>
+        <h2>CONTINUE WITH YOUR EMAIL ADDRESS</h2>
+        <p>Sign in with your username and password or create a new account.</p>
+        <div id="registerForm">
+        <table>
+            <tr>
+                <th>EMAIL: </th>
+                <td><input type="email" id="registerEmail" placeholder="Enter your email."></td>
+            </tr>
+            <tr>
+                <th >USERNAME: </th>
+                <td><input type="text" id="registerUsername" placeholder="Enter Your username."></td>
+            </tr>
+            <tr>
+                <th >PASSWORD:</th>
+                <td><input type="password" id="registerPassword" placeholder="Enter your password."></td>
+            </tr>
+                <td class="buttonId" colspan="2">
+                <button id="registerBtn" onclick="register()">Register</button>
+                <button id="back">Back</button>
+                </td>
+            <tr>
+                <td colspan="2"><p><a href="#" onclick="showLoginForm()">Log-in if you already have an account</a></p></td>
+            </tr>
+        </table>
+        </div>
+        <div id="loginForm">
+            <table>
+            <tr>
+                <th>EMAIL: </th>
+                <td><input type="email" id="loginEmail" placeholder="Enter your email."></td>
+            </tr>
+            <tr>
+                <th>PASSWORD: </th>
+                <td><input type="password" id="loginPassword" placeholder="Enter your password."></td>
+            </tr>
+            <td class="buttonId" colspan="2">
+            <button id="loginBtn" onclick="login()">Login</button>
+            <button id="back" >Back</button>
+            </td>
+            <tr>
+                <td colspan="2"><p><a href="#" onclick="showRegisterForm()">Don't have an account click here to register.</a></p></td>
+            </tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function(){
+            const username = document.getElementById('loggedInUser');
+            if (username){
+                windows.locate.href = 'index.html';
+            }
+        }
+        function showRegisterForm(){
+            document.getElementById("registerForm").style.display = "block";
+            document.getElementById("loginForm").style.display = "none";
+            }
+        function showLoginForm(){
+            document.getElementById("registerForm").style.display = "none";
+            document.getElementById("loginForm").style.display = "flex";
+        }
+        function register(){
+            const email = document.getElementById("registerEmail").value;
+            const username = document.getElementById("registerUsername").value;
+            const password = document.getElementById("registerPassword").value;
+            localStorage.setItem("registerEmail", email);
+            localStorage.setItem("registerUsername", username);
+            localStorage.setItem("registerPassword", password);
+            alert("Registration Successful!");
+            window.location.href = "index.html";
+        }
+        function login(){
+            const email = document.getElementById("loginEmail").value;
+            const password = document.getElementById("loginPassword").value;
+            const storedEmail = localStorage.getItem("registerEmail");
+            const storedPassword = localStorage.getItem("registerPassword");
+            if(email === storedEmail && password === storedPassword){
+                alert("Login successful!");
+                window.location.href = "index.html";
+            } else(alert("Invalid Credentials!"))        
+        }
+
+    </script>
+</body>
+
+</html>
