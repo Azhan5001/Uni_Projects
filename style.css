@@ -12,6 +12,7 @@ SCREEN: RESPONSIVE (COMPUTER, TABLET AND PHONE)
 * {
     margin: 0;
     padding: 0;
+    
 }
 
 body {
@@ -27,9 +28,9 @@ body {
 }
 
 #common-header {
-    position: static;
     height: 40px;
 }
+
 
 #animated-header nav {
     display: flex;
@@ -477,6 +478,7 @@ nav li:first-child {
 
 #common {
     background-color: white;
+    overflow: hidden;
 }
 
 .error-msg {
