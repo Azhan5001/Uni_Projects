@@ -615,6 +615,10 @@ nav li:first-child {
 .contact-h2 {
     text-align: center;
 }
+.footer-bottom a{
+    text-decoration: none;
+    color: white;
+}
 
 .footer p {
     font-size: 1em;
@@ -1722,24 +1726,6 @@ header .totalQuantity {
         transform: scale(1.0);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
