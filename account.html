@@ -27,6 +27,10 @@
             </div>   
         </nav>
     </header>
+
+    <div id = bg_image>
+        <img src="./images/Img2.jpg" alt="Background Image">
+    </div>
     <div id="registerBlock">
         <h1>MY QUILS ACCOUNT</h1>
         <h2>CONTINUE WITH YOUR EMAIL ADDRESS</h2>
@@ -78,7 +82,7 @@
             </form>
         </div>
     </div>
-
+    
     <script>
         window.onload = function(){
             const username = document.getElementById('loggedInUser');
@@ -104,14 +108,28 @@
         }
     
         function register() {
+            var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
             const emailInput = document.getElementById("registerEmail");
             const usernameInput = document.getElementById("registerUsername");
             const passwordInput = document.getElementById("registerPassword");
-    
-            if (!emailInput.checkValidity() || !usernameInput.value || !passwordInput.value) {
-                alert("Please fill in all fields with valid information.");
-                return; // Stop registration if any field is invalid or empty
+            
+            if (usernameInput.value === ""){
+                alert("Please enter your username.");
+                return;
+            }else if(passwordInput.valule===""){
+                alert("Please enter your password.");
+                return;
+            }else if(emailInput.value === ""){
+                alert("Please enter your email.");
+                return;
+            }else if(!filter.test(emailInput.value)){
+                alert("Please enter a valid email.");
+                return;
+            }else if(passwordInput.value.length < 6 || passwordInput.value.length > 15){
+                alert("Password must be between 6-15 characters.");
+                return;
             }
+
     
             // Store valid data in localStorage
             localStorage.setItem("registerEmail", emailInput.value);
