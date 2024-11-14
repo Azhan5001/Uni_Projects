@@ -82,7 +82,7 @@ nav li:first-child{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     overflow: hidden;
     animation: slideInTop 0.8s ease-in;
@@ -421,6 +421,7 @@ footer{
     }
     .newProducts{
         flex-direction: column;
+        margin-right: 5px;
     }
     #customerReview{
         height: 500px;
@@ -479,6 +480,10 @@ footer{
     }
     #customerReview{
         height: 60%;
+    }
+    .reviews{
+        margin-left: -70px;
+        margin-right: -100px;
     }
     #textBox{
         height: 200px;
