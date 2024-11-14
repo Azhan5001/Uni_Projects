@@ -3,16 +3,19 @@
     margin: 0;
     padding: 0;
 }
+/*------------------------ NAVIGATION BAR ------------------------*/
 header{
     top: 0;
     width: 100%;
-    position: fixed;
+    position:fixed ;
+    z-index: 2;
 }
 nav{
     display: flex;
     justify-content: flex-end;
-    height: 50px;
+    height: 60px;
     background-color: rgba(255, 255, 255, 0);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 nav ul{
@@ -43,8 +46,9 @@ nav a{
     height: 100%;
     background-color: rgba(255, 255, 255, 0.288);
 }
-.icons{
+nav .icons{
     fill: rgb(255, 255, 255);
+    transition: fill 0.3s ease;
 }
 nav li:first-child{
     margin-right: auto;
@@ -52,6 +56,7 @@ nav li:first-child{
     font-size: 2.5em;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
+    transition: color 0.3s ease
 }
 #sidebar-active, #sidebar-close{
     display: none;
@@ -62,6 +67,9 @@ nav li:first-child{
     overflow: none;
     
 }
+
+/*------------------------ HERO BLOCK ------------------------*/
+
 .hero_group{
     overflow: hidden;
 }
@@ -118,28 +126,193 @@ nav li:first-child{
     color: black;
     font-size: 20px;
 }
-.newProducts{ 
-    height: 80vh;
-    display: grid; /* Using grid layout */
-    grid-template-columns: repeat(3, 1fr); /* 3 equal-width columns */
-    gap: 2%; /* Equal space between products */
-    padding: 2%; /* Adds gap around the container's edges */
-    box-sizing: border-box; /* Ensures padding doesn't affect width/height */
-  }
-.title{
-    height: 20vh;
+
+/*------------------------ NEW PRODUCTS BLOCK ------------------------*/
+
+.newProducts {
     display: flex;
     justify-content: center;
-    align-items: end;
-    font-size: 1.2rem;
-    font-family: Helvetica, sans-serif;
+
 }
-.products{
-    background: #f4f4f4; /* Just for visibility */
-    padding: 20px;
-    border: 1px solid #ccc;
-  }
-/* CSS FOR ACCOUNT.HTML */
+
+.products {
+    width: 100%;
+    margin: 1%;
+    position: relative; /* Needed to position overlay relative to this container */
+}
+
+#product1 {
+    margin-right: 0.5%;
+}
+
+#product2 {
+    margin-left: 0.5%;
+}
+
+.newProducts img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#overlay {
+    position: absolute;
+    bottom: 10rem;
+    left: 50%;
+    transform: translateX(-50%); /* Centers the overlay */
+    font-size: 25px;
+    font-family: "Gucci Sans Pro", Helvetica, Arial, sans-serif;
+    color: white;
+    text-align: center;
+}
+
+#overlay section {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    width: 280px;
+}
+
+#overlay p {
+    margin: 0;
+}
+
+#overlay a {
+    position: relative; 
+    color: white;
+    width: 80%;
+    height: 50px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-align: center;
+    z-index: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#overlay a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.15);
+    border: 1px solid white; 
+    border-radius: 2px;
+    backdrop-filter: blur(10px); 
+    z-index: -1;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#overlay a:hover::before {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+/*------------------------ CUSTOMER REVIEW BLOCK ------------------------*/
+
+#customerReview {
+    height: 140rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #e9e7e7;
+    overflow: hidden; 
+}
+
+.reviews {
+    height: 30%;
+    width: 90%;
+}
+
+
+#photo {
+    height: 44vw;
+    width: 33%;
+    position: relative;
+    bottom: 56%;
+    left: 48%;
+    overflow: hidden;
+    border-radius: 50px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+#photo img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50px;
+    object-fit: cover;
+}
+
+#profile {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    position: relative;
+    top: 20%;
+    left: 20%;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+#review1 #profile{
+    background-image: url(./images/profilePic1.jpeg);
+    background-size: 180%;
+    background-repeat: no-repeat;
+}
+#review2 #profile{
+    background-image: url(./images/profilePic2.jpg);
+    background-size: 150%;
+    background-repeat: no-repeat;
+    left: auto;
+}
+#review3 #profile{
+    background-image: url(./images/profilePic3.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+#textBox {
+    display: flex;
+    align-items: center;
+    font-size:140%;
+    font-style: italic;
+    background-color: white;
+    height: 30%;
+    width: 600px;
+    border-radius: 50px;
+    z-index: 1;
+    position: relative;
+    left: 17%;
+    top: 25%;
+    text-align: center;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure elements inside review2 align as expected */
+#review2 #photo {
+    left: auto;  /* Reset the left offset */
+    bottom: auto;  /* Reset the bottom offset */
+    bottom: 54%;
+    left: 5%;
+}
+
+#review2 #profile {
+    left: auto;  /* Reset the left offset */
+    left: 55%;
+}
+
+#review2 #textBox {
+
+    left:auto;
+    bottom: auto;
+    left: 25%;
+}
+
+/*------------------------ CSS FOR ACCOUNT.HTML ------------------------*/
+
 #account{
     display: flex;
     justify-content: center;
@@ -147,88 +320,87 @@ nav li:first-child{
 #common{
     background-color: white;
 }
-#registerBlock {
+
+#registerBlock{
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    border: 2px solid #ccc; /* Border color */
-    border-radius: 10px; /* Rounded corners */
-    height: 90%; /* Adjust height for better appearance */
-    width: 40%; /* Adjust width for better appearance */
-    margin-top: 4em;
-    padding: 2em; /* Fluid padding for inner spacing */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
-    background-color: #ffffff; /* White background for the block */
+    align-items: center;
+    background-color: white;
+    margin-top: 60px;
+    height: 40em;
+    width: 400px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
 }
-
-#registerBlock h1, 
-#registerBlock h2, 
-#registerBlock p {
-    margin: 0.3em;
-    color: #333; /* Dark text color for contrast */
-    text-align: center; /* Center align text */
+#loginForm{
+    display: none;
+    width: 70%;
+}
+#heading{
+    padding-bottom:5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
 }
 #registerForm{
-    display: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-#registerForm table #loginForm table{
-    width: 100%; /* Full width */
-    margin-top: 2em; /* Space above the table */
+#label-inputs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#label-inputs *{
+    margin: 0 0 6% 5%;
+    font-family:sans-serif;
+
+}
+#label-inputs > p{
+    text-align: center;
+}
+#inputs *{
+    margin: 0;
 }
 
-#registerForm th, #loginForm th {
-    text-align: left; /* Align text to the left */
-    color: #666; /* Lighter color for labels */
-    padding: 1em;
-}
-
-#registerForm td input, #loginForm td input {
-    width: 100%; /* Full width input */
-    padding: 0.8em; /* Fluid padding for inputs */
-    border: 1px solid #ccc; /* Border for inputs */
-    border-radius: 0.5em; /* Rounded corners for inputs */
-    margin-top: 0.5em; /* Space above inputs */
-}
-
-#registerForm td{
-    text-align: center; /* Center align table cells */
-    padding-right: 10%;
-}
-
-#registerForm td button, #loginForm td button{
-    padding: 0.8em 1.5em; /* Fluid padding for buttons */
-    border: none; /* Remove default border */
-    border-radius: 0.5em; /* Rounded corners for buttons */
-    cursor: pointer; /* Pointer cursor on hover */
-    background-color: #007bff; /* Primary button color */
-    color: white; /* White text color */
-    margin: 2em 0.5em; /* Space around buttons */
-    transition: background-color 0.3s ease; /* Transition effect */
-}
-
-#registerForm td button:hover, #loginForm td button:hover{
-    background-color: #0056b3; /* Darker on hover */
-}
-
-#loginForm {
+#buttons{
     display: flex;
     justify-content: center;
-    width: 100%; /* Full width */
-    margin-top: 2em;
+    height: 3em;
+}
+#buttons *{
+    width: 50%;
+    height: 90%;
+    border: none;
+    color: white;
+    border-radius: 1em;
+    background-color: #007bff;
+}
+.text-box{
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    height: 1.8em;
+    width: 100%;
+    padding: 2%;
+    border-width: 1px;
+    border-radius: 6px;
 }
 
-#loginForm td{
-    text-align: center;
-    padding-left: 2%;
-}
-#bg_image{
-    height: 100vh;
-    width: 100vw;
+
+/*------------------------ FOOTER ------------------------*/
+
+footer{
+    width: 100%;
+    height: 500px;
+    background-color: black;
 }
 
 
-@media(max-width:700px){
+@media(max-width:900px){
     svg{
         fill: white;
     }
@@ -244,32 +416,56 @@ nav li:first-child{
     #sidebar-close:checked~.sidebar{
         display: none;
     }
-    .newProducts {
-        grid-template-columns: 1fr;
-        height: 300vh;
+    .newProducts{
+        flex-direction: column;
     }
-    #registerForm th, #loginForm th{
-        display: none; /* Hide <th> elements */
+    .products{
+
+    }#customerReview{
+        height: 500px;
+        flex-direction: row;
+        justify-content: start;
+        overflow-x: scroll;
     }
-    table{
-        margin-right: 4em;
+    #customerReview *{
+        position: static;
+        left: auto;
+        bottom: auto;
     }
-    #registerForm td input{
-        margin: 0.2em; /* Center the input boxes */
-        width: 100%; /* Limit width for smaller screens */
+    #textBox{
+        height: 40%;
+        margin-top: 5%;
     }
-    #loginForm td input{
-        margin: 0.2em; /* Center the input boxes */
-        width: 80%; 
+    .reviews{
+        height: 100%;
     }
-    #registerBlock {
-        width: 70vw; /* Adjust block width for smaller screens */
+    #profile{
+        z-index: 1;
     }
-    .buttonTd{
-        padding-left: 2em;
+    #review2{
+        margin-left: 10%;
+        margin-right: 10%;
     }
-    #loginForm table, #registerForm table{
-        width: 100%;
+    #review2 #photo {
+        left: auto;  /* Reset the left offset */
+        bottom: auto;  /* Reset the bottom offset */
+    }
+    
+    #review2 #profile {
+        left: auto;  
+    }
+    
+    #review2 #textBox {
+        left:auto;
+    }
+    .reviews{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #photo{
+        display: none;
     }
 }
 @media(max-width:500px){
@@ -284,4 +480,20 @@ nav li:first-child{
     to{
         transform: scale(1.0);
     }
+}
+
+
+
+
+
+
+nav.scrolled {
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+nav.scrolled .icons{
+    fill: black;
+}
+nav.scrolled .logo{
+    color: black;
 }

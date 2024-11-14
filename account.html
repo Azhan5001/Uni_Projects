@@ -28,60 +28,59 @@
         </nav>
     </header>
 
-    <div id = bg_image>
+    <!-- <div id = bg_image>
         <img src="./images/Img2.jpg" alt="Background Image">
-    </div>
+    </div> -->
     <div id="registerBlock">
-        <h1>MY QUILS ACCOUNT</h1>
-        <h2>CONTINUE WITH YOUR EMAIL ADDRESS</h2>
-        <p>Sign in with your username and password or create a new account.</p>
-        <div id="registerForm">
-        <form id="regisForm">
-            <table>
-                <tr>
-                    <th>EMAIL: </th>
-                    <td><input type="email" id="registerEmail" placeholder="Enter your email."></td>
-                </tr>
-                <tr>
-                    <th >USERNAME: </th>
-                    <td><input type="text" id="registerUsername" placeholder="Enter Your username."></td>
-                </tr>
-                <tr>
-                    <th >PASSWORD:</th>
-                    <td><input type="password" id="registerPassword" placeholder="Enter your password."></td>
-                </tr>
-                    <td class="buttonId" colspan="2">
-                    <button type="submit" id="registerBtn">Register</button>
-                    <button id="back">Back</button>
-                    </td>
-                <tr>
-                    <td colspan="2"><p><a href="#" onclick="showLoginForm()">Log-in if you already have an account</a></p></td>
-                </tr>
-            </table>
-        </form>
+        <div id = heading>
+            <h1>MY QUILS ACCOUNT</h1>
+            <h2>CONTINUE WITH YOUR EMAIL ADDRESS</h2>
+            <p>Sign in with your username and password or create a new account.</p>
         </div>
-        <div id="loginForm">
-            <form>
-            <table>
-            <tr>
-                <th>EMAIL: </th>
-                <td><input type="email" id="loginEmail" placeholder="Enter your email."></td>
-            </tr>
-            <tr>
-                <th>PASSWORD: </th>
-                <td><input type="password" id="loginPassword" placeholder="Enter your password."></td>
-            </tr>
-            <td class="buttonId" colspan="2">
-            <button id="loginBtn" onclick="login()">Login</button>
-            <button id="back" >Back</button>
-            </td>
-            <tr>
-                <td colspan="2"><p><a href="#" onclick="showRegisterForm()">Don't have an account click here to register.</a></p></td>
-            </tr>
-            </table>
+        <div id="registerForm">
+            <form id = "regisForm">
+                <div id = label-inputs>
+                    <div id = inputs>
+                        <p>EMAIL:</p>
+                        <input type="email" id="registerEmail" class="text-box" placeholder="Enter your email.">
+                    </div>
+                    <div id="inputs">
+                        <p>USERNAME:</p>
+                        <input type="text" id="registerUsername" class="text-box" placeholder="Enter Your username.">
+                    </div>
+                    <div id="inputs">
+                        <p>PASSWORD:</p>
+                        <input type="password" id="registerPassword" class="text-box" placeholder="Enter your password.">
+                    </div>
+                    <div id = buttons>
+                        <button type="submit" id="registerBtn">Register</button>
+                        <button id="back">Back</button>
+                    </div>
+                    <p><a href="#" onclick="showLoginForm()">Log-in if you already have an account</a></p>
+                </div>
             </form>
         </div>
-    </div>
+        
+        <div id="loginForm">
+            <div>
+                <div id="label-inputs">
+                    <div id="inputs">
+                        <p>EMAIL:</p>
+                        <input type="email" id="loginEmail" class="text-box" placeholder="Enter your email.">
+                    </div>
+                    <div id="inputs">
+                        <p>PASSWORD:</p>
+                        <input type="password" id="loginPassword" class="text-box" placeholder="Enter your password.">
+                    </div>
+                    <div id="buttons">
+                        <button type="submit" id="loginBtn" onclick="login()">Login</button>
+                        <button id="back">Back</button>
+                    </div>
+                    <p><a href="#" onclick="showRegisterForm()">Don't have an account? Click here to register.</a></p>
+                </div>
+            </div>
+        </div>
+        
     
     <script>
         window.onload = function(){

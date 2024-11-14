@@ -29,24 +29,76 @@
             </div>   
         </nav>
     </header>
+
     <div class="hero_group">
         <div class="hero">
             <img class="hero_img" src="./images/hero_image.jpg" alt="image">
         </div>
     </div>
-    <div class = "title">
-        <h1><strong> New Products</strong></h1>
-    </div>
+
     <div class="newProducts">
         <div id="product1" class="products">
+            <img src="./images/product1.jpg" alt="">
+            <div id="overlay">
+                <section id="sentence"><p>Gifts for Him</p></section>
+                <section><a id="OLAnchor" href="#">EXPLORE THE COLLECTION</a></section>
+            </div>
         </div>
         <div id="product2" class="products">
+            <img src="./images/pexels-godisable-jacob-226636-1253413.jpg" alt="product2">
+            <div id="overlay">
+                <section id="sentence"><p>Gifts for Him</p></section>
+                <section><a id="OLAnchor" href="#">EXPLORE THE COLLECTION</a></section>
+            </div>
         </div>
-        <div id="product3" class="products">
-        </div>
-
-
     </div>
+    <div id = "customerReview">
+        <div id = review1 class="reviews"> 
+            <div id = profile></div>
+            <div id = textBox><p>"I absolutely adore the trendy styles this store offers. The clothes fit so well and they look amazing on a curvy figure. I really appreciate this option and the quality of the goods is so great that I will order product in the future. Thank you so much for making me feel beautiful!"</p></div>
+            <div id = photo>
+                <img src="./images/img3.jpg" alt="fasion image 1">
+            </div>           
+        </div>
+        <div id = review2 class="reviews"> 
+            <div id = profile></div>
+            <div id = textBox><p>"This store has an awesome selection of men’s styles that are both fashionable and super comfortable. The clothes fit perfectly and have a modern look that’s hard to find elsewhere. I really appreciate the quality materials they use—everything I’ve ordered feels durable and well-made. It’s safe to say I’ll be a returning customer. Thanks for making me look good!"</p></div>
+            <div id = photo>
+                <img src="./images/img4.jpg" alt="fasion image 2">
+            </div>           
+        </div>
+        <div id = review3 class="reviews"> 
+            <div id = profile></div>
+            <div id = textBox><p>"I’m in love with the chic and stylish collection from this store! Every piece I’ve bought fits perfectly and really enhances my shape. It’s so refreshing to find clothes that embrace curves while keeping up with current trends. The quality is fantastic, too—I can see these items lasting me for years. Definitely planning to add more to my wardrobe from here!"</p></div>
+            <div id = photo>
+                <img src="./images/img6.jpg" alt="fasion image 3">
+            </div>        
+        </div>
+    </div>
+    <footer>
+        <div>
 
+        </div>
+    </footer>
+    <script>
+
+        // Calculate 2% of the total document height
+        const navbar = document.querySelector('nav');
+        const twoPercentScroll = document.documentElement.scrollHeight * 0.02;
+
+        // Add a scroll event listener
+        window.addEventListener('scroll', () => {
+        // Check if scroll position is greater than or equal to 2% of the total height
+        if (window.scrollY >= twoPercentScroll) {
+            // Add the 'scrolled' class to change navbar and SVG styles
+            navbar.classList.add('scrolled');
+            
+        } else {
+            // Remove the 'scrolled' class to revert to original styles
+            navbar.classList.remove('scrolled');
+        }
+        });
+
+    </script>
 </body>
 </html>
