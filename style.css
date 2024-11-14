@@ -3,6 +3,9 @@
     margin: 0;
     padding: 0;
 }
+body{
+    overflow-x: hidden;
+}
 /*------------------------ NAVIGATION BAR ------------------------*/
 header{
     top: 0;
@@ -438,6 +441,7 @@ footer{
     }
     .reviews{
         height: 100%;
+        width: 1000px;
     }
     #profile{
         z-index: 1;
@@ -472,6 +476,19 @@ footer{
     .sidebar{
         width: 100%;
     }
+    #customerReview *{
+        scale: 0.86;
+    }
+    #customerReview{
+        height: 60%;
+    }
+    #textBox{
+        height: 200px;
+    }
+    nav{
+        margin-left: 0;
+    }
+
 }
 @keyframes slideInTop {
     from{
