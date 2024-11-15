@@ -70,29 +70,6 @@ nav li:first-child{
     overflow: none;
     display: none;
 }
-
-/*------------------------ HERO BLOCK ------------------------*/
-
-.hero_group{
-    overflow: hidden;
-}
-.hero{   
-    position: relative;
-    z-index: -1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    animation: slideInTop 0.8s ease-in;
-    transform-origin:center center;
-}
-.hero_img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 .sidebar{
     position: fixed;
     top: 0;
@@ -128,6 +105,79 @@ nav li:first-child{
     color: black;
     font-size: 20px;
 }
+/*------------------------ HERO BLOCK ------------------------*/
+
+.hero_group{
+    overflow: hidden;
+}
+.hero{   
+    position: relative;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    animation: slideInTop 0.8s ease-in;
+    transform-origin:center center;
+}
+.hero_img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Hero Text and Link Styling */
+#hero-text-box{
+    color: white;
+    position: absolute;
+    bottom: 30%;
+    width: 20%;
+    height: 270px;
+    margin-left: 10%;
+    text-align: left;
+
+}
+#hero-text-box *{
+    margin-bottom: 7%;
+}
+#hero-link-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+}
+#hero-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    text-align: center;
+    font-family:"Gucci Sans Pro", Helvetica, Arial, sans-serif;
+    font-size: 0.9rem;
+    height: 80%;
+    width: 70%;
+    color: white;
+
+}
+#hero-link::before{
+    content: "";
+    position: absolute;
+    width: 70%;
+    height: 20%;
+    background-color: rgba(0, 0, 0, 0.15);
+    border: 1px solid white; 
+    border-radius: 2px;
+    backdrop-filter: blur(10px); 
+    z-index: -1;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+#hero-link:hover::before {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
 
 /*------------------------ NEW PRODUCTS BLOCK ------------------------*/
 
@@ -396,11 +446,90 @@ nav li:first-child{
 
 /*------------------------ FOOTER ------------------------*/
 
-footer{
-    width: 100%;
-    height: 500px;
-    background-color: black;
-}
+/* Footer Styling */
+/* Footer Styling */
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #333;
+    position: relative;
+  }
+  
+  .footer-column {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px 20px;
+  }
+  
+  .footer h2 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  .contact-h2{
+    text-align: center;
+  }
+  
+  .footer p {
+    font-size: 1em;
+    line-height: 1.5;
+    text-align: left;
+  }
+  .footer-bottom p{
+    text-align: center;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+  }
+  
+  .icon {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s;
+  }
+  
+  .icon:hover {
+    color: #ddd;
+  }
+  
+  /* Divider Line */
+  .footer-divider {
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, #888, transparent);
+    height: 70%;
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    transform: translateX(-50%);
+  }
+  
+  /* Copyright Section */
+  .footer-bottom {
+    padding-top: 20px;
+    text-align: center;
+  }
+  
+  .footer-bottom p {
+    font-size: 0.9em;
+    color: #888;
+    margin: 0;
+  }
+  
 
 
 @media(max-width:900px){
@@ -417,6 +546,9 @@ footer{
         display: flex;
     }
     #sidebar-close:checked~.sidebar{
+        display: none;
+    }
+    .hero-subtitle{
         display: none;
     }
     .newProducts{
@@ -470,6 +602,28 @@ footer{
     #photo{
         display: none;
     }
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+      }
+    
+      .footer-column {
+        min-width: 100%;
+        text-align: center;
+        margin: 20px 0;
+      }
+    
+      .footer h2 {
+        font-size: 1.2em;
+      }
+    
+      .footer p, .footer-bottom p {
+        font-size: 0.9em;
+      }
+    
+      .footer-divider {
+        display: none; /* Hides divider on smaller screens */
+      }
 }
 @media(max-width:500px){
     .sidebar{
@@ -491,7 +645,21 @@ footer{
     nav{
         margin-left: 0;
     }
-
+    .footer h2 {
+        font-size: 1.1em;
+    }
+    
+    .icon {
+        font-size: 1em;
+    }
+    
+    .footer p, .footer-bottom p {
+        font-size: 0.8em;
+    }
+    
+    .footer {
+        padding: 20px 10px;
+    }
 }
 @keyframes slideInTop {
     from{
