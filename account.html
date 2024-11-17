@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
+<!---------------- NAV BAR ----------------->
+
 <body id="account">
     <header>
         <nav id="common">
@@ -28,9 +30,8 @@
         </nav>
     </header>
 
-    <!-- <div id = bg_image>
-        <img src="./images/Img2.jpg" alt="Background Image">
-    </div> -->
+<!---------------- REGISTER SECTION ----------------->
+
     <div id="registerBlock">
         <div id = heading>
             <h1>MY QUILS ACCOUNT</h1>
@@ -39,87 +40,92 @@
         </div>
         <div id="registerForm">
             <form id = "regisForm">
-                <div id = label-inputs>
-                    <div id = inputs>
+                <div class = label-inputs>
+                    <div class = inputs>
                         <p>EMAIL:</p>
                         <input type="email" id="registerEmail" class="text-box" placeholder="Enter your email.">
                     </div>
-                    <div id="inputs">
+                    <div class="inputs">
                         <p>USERNAME:</p>
                         <input type="text" id="registerUsername" class="text-box" placeholder="Enter Your username.">
                     </div>
-                    <div id="inputs">
+                    <div class="inputs">
                         <p>PASSWORD:</p>
                         <input type="password" id="registerPassword" class="text-box" placeholder="Enter your password.">
                     </div>
-                    <div id = buttons>
+                    <div class = buttons>
                         <button type="submit" id="registerBtn">Register</button>
-                        <button id="back">Back</button>
+                        <button class="back">Back</button>
                     </div>
                     <p><a href="#" onclick="showLoginForm()">Log-in if you already have an account</a></p>
                 </div>
             </form>
         </div>
-        
+<!---------------- LOGIN SECTION ----------------->        
         <div id="loginForm">
             <div>
-                <div id="label-inputs">
-                    <div id="inputs">
+                <div class="label-inputs">
+                    <div class="inputs">
                         <p>EMAIL:</p>
                         <input type="email" id="loginEmail" class="text-box" placeholder="Enter your email.">
                     </div>
-                    <div id="inputs">
+                    <div class="inputs">
                         <p>PASSWORD:</p>
                         <input type="password" id="loginPassword" class="text-box" placeholder="Enter your password.">
                     </div>
-                    <div id="buttons">
+                    <div class="buttons">
                         <button type="submit" id="loginBtn" onclick="login()">Login</button>
-                        <button id="back">Back</button>
+                        <button class="back">Back</button>
                     </div>
                     <p><a href="#" onclick="showRegisterForm()">Don't have an account? Click here to register.</a></p>
                 </div>
             </div>
         </div>
-        
-    
+    </div>   
+
+<!---------------- JS FOR REGISTER/LOGIN FUNCTION ----------------->
+
     <script>
         window.onload = function(){
             const username = document.getElementById('loggedInUser');
             if (username) {
-                // Redirect if 'loggedInUser' is found
-                window.location.href = 'index.html';
+                window.location.href = 'index.html';            // REDIRECT IF 'loggedInUser' IS FOUND
             }
         };
     
         document.getElementById("regisForm").onsubmit = function(event) {
-            event.preventDefault(); // Prevent form submission
-            register(); // Call the register function
+            event.preventDefault();                   // PREVENT FORM SUBMISSION
+            register();                               // CALL THE REGISTER FUNCTION ON BUTTON CLICK
         };
     
-        function showRegisterForm() {
-            document.getElementById("registerForm").style.display = "block";
-            document.getElementById("loginForm").style.display = "none";
+        function showRegisterForm() {                                               // FUNCTION TO SHOW THE REGISTER FORM/SECTION
+            document.getElementById("registerForm").style.display = "block";        // MAKING THE REGISTER FORM VISIBLE
+            document.getElementById("loginForm").style.display = "none";            // MAKING LOGIN FORM INVISIBLE
         }
     
-        function showLoginForm() {
-            document.getElementById("registerForm").style.display = "none";
-            document.getElementById("loginForm").style.display = "flex";
-        }
+        function showLoginForm() {                                                  // FUNCTION TO SHOW THE LOGIN FORM/SECTION
+            document.getElementById("registerForm").style.display = "none";         // MAKING THE REGISTER FORM INVISIBLE
+            document.getElementById("loginForm").style.display = "flex";            // MAKING LOGIN FORM VISIBLE
+        }   
+
+        /* REGISTER FUNCTION */
+
+        function register() {                                                                       // REGISTER FUNCTION WHEN CLICKED ON THE REGISTER BUTTON
+            var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})$/;          
+            const emailInput = document.getElementById("registerEmail");                            //}
+            const usernameInput = document.getElementById("registerUsername");                      //}       GETTING THE INPUTS FROM THE REGISTER FORM
+            const passwordInput = document.getElementById("registerPassword");                      //}
+        
+        // VALIDATING THE USER INPUTS AND SHOWING ERROR IF NOT CORRECT.
     
-        function register() {
-            var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})$/;
-            const emailInput = document.getElementById("registerEmail");
-            const usernameInput = document.getElementById("registerUsername");
-            const passwordInput = document.getElementById("registerPassword");
-            
-            if (usernameInput.value === ""){
+            if (usernameInput.value === ""){                                                        
                 alert("Please enter your username.");
                 return;
             }else if(passwordInput.valule===""){
-                alert("Please enter your password.");
+                alert("Please enter your password.");                                               
                 return;
-            }else if(emailInput.value === ""){
-                alert("Please enter your email.");
+            }else if(emailInput.value === ""){                                          
+                alert("Please enter your email.");                                      
                 return;
             }else if(!filter.test(emailInput.value)){
                 alert("Please enter a valid email.");
@@ -130,7 +136,7 @@
             }
 
     
-            // Store valid data in localStorage
+        // STORING VALID DATA IN THE LOCAL STORAGE OF THE BROWSER
             localStorage.setItem("registerEmail", emailInput.value);
             localStorage.setItem("registerUsername", usernameInput.value);
             localStorage.setItem("registerPassword", passwordInput.value);
@@ -139,12 +145,16 @@
             showLoginForm();
         }
     
-        function login() {
-            const email = document.getElementById("loginEmail").value;
-            const password = document.getElementById("loginPassword").value;
-            const storedEmail = localStorage.getItem("registerEmail");
-            const storedPassword = localStorage.getItem("registerPassword");
-    
+        /* LOGIN FUNCTION */
+
+        function login() {                                                                          // REGISTER FUNCTION WHEN CLICKED ON THE REGISTER BUTTON
+            const email = document.getElementById("loginEmail").value;                              // GETTING USER EMAIL FROM LOGIN FORM      
+            const password = document.getElementById("loginPassword").value;                        // GETTING USER PASSWORD FROM LOGIN FORM  
+            const storedEmail = localStorage.getItem("registerEmail");                              // GETTING STORED EMAIL FROM LOCAL STORAGE FOR COMPARISON  
+            const storedPassword = localStorage.getItem("registerPassword");                        // GETTING STORED PASSWORD FROM LOCAL STORAGE FOR COMPARISON
+            
+        // CHECKING IF THE CREDENTIALS INPUTTED MATCHES WITH THE STORED CREDENTIALS
+
             if (email === storedEmail && password === storedPassword) {
                 window.location.href = "index.html";
                 alert("Login successful!");
