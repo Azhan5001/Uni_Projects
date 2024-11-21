@@ -1,3 +1,8 @@
+function handleSubmit(event) {                                                       //For feedback page
+    event.preventDefault(); // Prevent form submission
+    document.querySelector('.main-content').style.display = 'none';
+    document.querySelector('#thank-you-message').style.display = 'block';
+}
 //*------------------------------------ NAV BAR ANIMATION ------------------------------------*/
 const navbar = document.querySelector('#animated-header nav');
 if (navbar) {
@@ -202,10 +207,8 @@ document.addEventListener('DOMContentLoaded', () => {
             iconCart.addEventListener('click', () => {
                 if (cart.style.right == '-100%') {
                     cart.style.right = '0';
-                    container.style.transform = 'translateX(-400px)';
                 } else {
                     cart.style.right = '-100%';
-                    container.style.transform = 'translateX(0)';
                 }
             })
             close.addEventListener('click', function () {

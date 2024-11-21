@@ -1,0 +1,142 @@
+/* Reset default browser styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+/* Navigation styling */
+.navigation {
+    background-color: #333;
+    text-align: center;
+    padding: 1em 0;
+}
+
+.nav-list {
+    list-style-type: none;
+}
+
+.nav-item {
+    display: inline;
+    margin-right: 1.5em;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+/* Main content styling */
+.main-content {
+    flex: 1;
+    width: 60%;
+    margin: 2em auto;
+    padding: 1.5em;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.content-title {
+    margin-bottom: 1em;
+    color: #333;
+}
+
+/* Form styling */
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.fieldset-personal-info,
+.fieldset-feedback {
+    border: 1px solid #ccc;
+    padding: 1em;
+    border-radius: 5px;
+}
+
+.fieldset-legend {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Form input styling */
+.form-label {
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+.form-label-inline {
+    margin-left: 0.5em;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    padding: 0.5em;
+    margin-top: 0.25em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-textarea {
+    resize: vertical;
+}
+
+.form-radio,
+.form-checkbox {
+    margin-right: 0.5em;
+}
+
+.form-button {
+    padding: 0.75em;
+    background-color: #333;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-button:hover {
+    background-color: #555;
+}
+
+/* Thank You Message Styling */
+#thank-you-message {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 1.5rem;
+    color: #333;
+    background-color: #f4f4f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer styling */
+.footer {
+    text-align: center;
+    padding: 1em;
+    background-color: #333;
+    color: white;
+    font-size: 0.875rem;
+}
+
+.footer-text {
+    margin: 0;
+}

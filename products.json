@@ -7,32 +7,32 @@
     },
     {
         "id": 2,
-        "name": "Product name 2",
+        "name": "Grey Male Coat",
         "price": 70,
         "image": "images/list_photo2.jpg"
     },
     {
         "id": 3,
-        "name": "Product name 3",
+        "name": "Red Female Coat",
         "price": 50,
         "image": "images/list_photo3.jpg"
     },
     {
         "id": 4,
-        "name": "Product name 4",
+        "name": "Black Female Coat",
         "price": 150,
-        "image": "images/hero_image3.jpg"
+        "image": "images/list-photo4.jpg"
     },
     {
         "id": 5,
-        "name": "Product name 5",
-        "price": 250,
+        "name": "Male Red Jacket",
+        "price": 100,
         "image": "images/list_photo5.jpg"
     },
     {
         "id": 6,
-        "name": "Product name 6",
-        "price": 70,
-        "image": "images/profilePic1.jpeg"
+        "name": "Trench Coat",
+        "price": 150,
+        "image": "images/list-photo6.jpg"
     }
 ]

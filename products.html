@@ -41,6 +41,7 @@
                                 <rect x="5" y="27" width="24" height="1" />
                             </svg>
                         </label>
+                        <label id="sidebar-overlay" for="sidebar-active"></label>
                         <div class="sidebar">
                             <label for="sidebar-active" class="close-button"><svg width="30px" viewBox="0 -0.5 25 25"
                                     fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -59,65 +60,75 @@
                 </ul>
             </nav>
         </header>
-        <!-- <header>
-                <h1>LIST PRODUCT</h1>
-                <div class="iconCart">
-                    <img src="images/shopping-cart.png" alt="">
-                    <div class="totalQuantity">0</div>
-                </div>
-            </header> -->
-
-
         <article>
             <div class="slider">
                 <div class="list">
                     <div class="item">
-                        <img src="images/list_photo1.jpg" alt="">
-
-                        <div class="content">
-                            <div class="title">STYLISH GLASSES</div>
-                            <div class="type">EYEWEAR</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="images/list_photo2.jpg" alt="">
+                        <img src="images/list_photo2.jpg" alt="Image of a man in coat">
 
                         <div class="content">
                             <div class="title">COAT</div>
                             <div class="type">MALE CLOTHES</div>
+                            <div class="sliderButtonContainer">
+                                <a href="#products_section" class="sliderButton">
+                                    Explore Products
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="images/list_photo3.jpg" alt="">
+                        <img src="images/list_photo1.jpg" alt="Image of a man wearing glasses">
+
+                        <div class="content">
+                            <div class="title">STYLISH GLASSES</div>
+                            <div class="type">EYEWEAR</div>
+                            <div class="sliderButtonContainer">
+                                <a href="#products_section" class="sliderButton">
+                                    Explore Products
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="images/list_photo3.jpg" alt="Image of a girl in red coat">
 
                         <div class="content">
                             <div class="title">RED COAT</div>
                             <div class="type">FEMALE CLOTHES</div>
-
+                            <div class="sliderButtonContainer">
+                                <a href="#products_section" class="sliderButton">
+                                    Explore Products
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="images/img4.jpg" alt="">
+                        <img src="images/img4.jpg" alt="Image of a guy wearing grey coat">
 
                         <div class="content">
                             <div class="title">COAT</div>
                             <div class="type">OUTER WEAR</div>
+                            <div class="sliderButtonContainer">
+                                <a href="#products_section" class="sliderButton">
+                                    Explore Products
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="thumbnail">
                     <div class="item">
-                        <img src="images/list_photo1.jpg" alt="">
+                        <img src="images/list_photo1.jpg" alt="thumbnail image 1">
                     </div>
                     <div class="item">
-                        <img src="images/list_photo2.jpg" alt="">
+                        <img src="images/list_photo2.jpg" alt="thumbnail image 2">
                     </div>
                     <div class="item">
-                        <img src="images/list_photo3.jpg" alt="">
+                        <img src="images/list_photo3.jpg" alt="thumbnail image 3">
                     </div>
                     <div class="item">
-                        <img src="images/img4.jpg" alt="">
+                        <img src="images/img4.jpg" alt="thumbnail image 4">
                     </div>
                 </div>
                 <div class="nextPrevArrows">
@@ -125,12 +136,12 @@
                         <img src="images/left-chevron.png" alt="Go Back">
                     </button>
                     <button class="next">
-                        <img src="images/chevron.png" alt="">
+                        <img src="images/chevron.png" alt="Go next">
                     </button>
                 </div>
             </div>
             <h1 class="products_title">Discover NEW Arrivals</h1>
-            <div class="container">
+            <div class="container" id="products_section">
                 <div class="listProduct">
                     <div class="product__item">
                         <img src="./images/list_photo1.jpg" alt="Product">
@@ -200,21 +211,19 @@
         <div class="container">
             <div class="listProduct">
                 <div class="product__item">
-                    <img src="images/list_photo2.jpg" alt="">
-                    <h2>CoPilot / Black / Automatic</h2>
-                    <div class="price">$50</div>
+                    <img src="images/list_photo2.jpg" alt="Grey Coat $70">
+                    <h2>Grey Male Coat</h2>
+                    <div class="price">$70</div>
                     <button>Add To Cart</button>
                 </div>
                 <div class="product__item">
-                    <img src="images/list_photo3.jpg" alt="">
-                    <h2>CoPilot / Black / Automatic</h2>
+                    <img src="images/list_photo3.jpg" alt="Red Female Trench Coat $50">
+                    <h2>Red Female Trench Coat</h2>
                     <div class="price">$50</div>
                     <button>Add To Cart</button>
                 </div>
             </div>
-
         </div>
-
     </div>
 
     </article>
