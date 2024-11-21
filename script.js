@@ -1,38 +1,55 @@
 //*------------------------------------ NAV BAR ANIMATION ------------------------------------*/
-const navbar = document.querySelector('nav');                                       
-const twoPercentScroll = document.documentElement.scrollHeight * 0.02;          // Calculate 2% of the total document height
-window.addEventListener('scroll', () => {                                       // Add a scroll event listener
-// Check if scroll position is greater than or equal to 2% of the total height
-if (window.scrollY >= twoPercentScroll) {
-navbar.classList.add('scrolled');                                               // Add the 'scrolled' class to change navbar and SVG styles    
-} else {
-navbar.classList.remove('scrolled');                                            // Remove the 'scrolled' class to revert to original styles
+const navbar = document.querySelector('#animated-header nav');
+if (navbar) {
+    const twoPercentScroll = document.documentElement.scrollHeight * 0.02;          // Calculate 2% of the total document height
+    window.addEventListener('scroll', () => {                                       // Add a scroll event listener
+        // Check if scroll position is greater than or equal to 2% of the total height
+        if (window.scrollY >= twoPercentScroll) {
+            navbar.classList.add('scrolled');                                               // Add the 'scrolled' class to change navbar and SVG styles    
+        } else {
+            navbar.classList.remove('scrolled');                                            // Remove the 'scrolled' class to revert to original styles
+        }
+    });
 }
-});
-
 //*------------------------------------ ACCOUNT.HTML LOGIN/REGISTRATION ------------------------------------*/
 
-window.onload = function(){
+window.onload = function () {
     const username = document.getElementById('loggedInUser');
     if (username) {
         window.location.href = 'index.html';                                // REDIRECT IF 'loggedInUser' IS FOUND
     }
 };
 
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("regisForm").onsubmit = function(event) {
-        event.preventDefault();  // Prevent form submission
-        register();  // Call the register function
-    };
+document.addEventListener("DOMContentLoaded", function () {
+    const regisForm = document.getElementById("regisForm");
+    const logForm = document.getElementById("logForm");
+    const logoutAnchor = document.getElementById('sidebar-logout');
+    if (logoutAnchor) {
+        logoutAnchor.addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent default anchor behavior
+            localStorage.setItem("loginStatus", 'false'); // Set login status to false
+            window.location.href = 'index.html';
+            checkLoginStatus(); // Call this function to update UI
+        });
+    }
+    if (regisForm) {
+        regisForm.onsubmit = function (event) {
+            event.preventDefault();
+            register();
+        };
+    }
 
-    document.getElementById("logForm").onsubmit = function(event) {
-        event.preventDefault();  // Prevent form submission
-        login();  // Call the login function
-    };
+    if (logForm) {
+        logForm.onsubmit = function (event) {
+            event.preventDefault();
+            login();
+        };
+    }
+    checkLoginStatus();
 });
-const backButtons = document.getElementsByClassName('back');
+const backButtons = document.getElementsByClassName('back');                // On clicking back button
 for (let button of backButtons) {
-    button.onclick = () => window.history.back();
+    button.onclick = () => window.history.back();                           // redirects to the previous page
 }
 
 function showRegisterForm() {                                               // FUNCTION TO SHOW THE REGISTER FORM/SECTION
@@ -43,38 +60,52 @@ function showRegisterForm() {                                               // F
 function showLoginForm() {                                                  // FUNCTION TO SHOW THE LOGIN FORM/SECTION
     document.getElementById("registerForm").style.display = "none";         // MAKING THE REGISTER FORM INVISIBLE
     document.getElementById("loginForm").style.display = "flex";            // MAKING LOGIN FORM VISIBLE
-}   
+}
+
+function checkLoginStatus() {
+    const loginStatus = localStorage.getItem('loginStatus') === 'true';
+    const loginButton = document.getElementById('sidebar-loginRegister');
+    const logoutButton = document.getElementById('sidebar-logout');
+
+    if (loginButton && logoutButton) {
+        if (loginStatus) {
+            loginButton.style.display = 'none';
+            logoutButton.style.display = 'block';
+        } else {
+            loginButton.style.display = 'block';
+            logoutButton.style.display = 'none';
+        }
+    }
+}
 
 /* REGISTER FUNCTION */
 var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})$/;
 
-function register() {                                                                       // REGISTER FUNCTION         
+function register() {                                                                               
     const emailInput = document.getElementById("registerEmail");                            //}
     const usernameInput = document.getElementById("registerUsername");                      //}       GETTING THE INPUTS FROM THE REGISTER FORM
     const passwordInput = document.getElementById("registerPassword");                      //}
     document.getElementById("msg1").innerHTML = "";
     document.getElementById("msg2").innerHTML = "";
     document.getElementById("msg3").innerHTML = "";
-// VALIDATING THE USER INPUTS AND SHOWING ERROR IF NOT CORRECT.
-    if(emailInput.value === ""){                                          
-        document.getElementById("msg1").innerHTML = "Please enter your email.";                                      
+    // VALIDATING THE USER INPUTS AND SHOWING ERROR IF NOT CORRECT.
+    if (emailInput.value === "") {
+        document.getElementById("msg1").innerHTML = "Please enter your email.";
         return;
-    }else if(!filter.test(emailInput.value)){
+    } else if (!filter.test(emailInput.value)) {
         document.getElementById("msg1").innerHTML = "Please enter a valid email.";
         return;
-    }else if (usernameInput.value === ""){                                                        
+    } else if (usernameInput.value === "") {
         document.getElementById("msg2").innerHTML = "Please enter your username.";
         return;
-    }else if(passwordInput.valule===""){
-        document.getElementById("msg3").innerHTML = "Please enter your password.";                                               
+    } else if (passwordInput.valule === "") {
+        document.getElementById("msg3").innerHTML = "Please enter your password.";
         return;
-    }else if(passwordInput.value.length < 6 || passwordInput.value.length > 15){
+    } else if (passwordInput.value.length < 6 || passwordInput.value.length > 15) {
         document.getElementById("msg3").innerHTML = "Password must be between 6-15 characters.";
         return;
     }
-
-
-// STORING VALID DATA IN THE LOCAL STORAGE OF THE BROWSER
+    // STORING VALID DATA IN THE LOCAL STORAGE OF THE BROWSER
     localStorage.setItem("registerEmail", emailInput.value);
     localStorage.setItem("registerUsername", usernameInput.value);
     localStorage.setItem("registerPassword", passwordInput.value);
@@ -86,14 +117,16 @@ function register() {                                                           
 /* LOGIN FUNCTION */
 
 function login() {
-    const email = document.getElementById("loginEmail").value;
+    const email = document.getElementById("loginEmail").value; // Getting user inputs for email and password
     const password = document.getElementById("loginPassword").value;
-    const storedEmail = localStorage.getItem("registerEmail");
+    const storedEmail = localStorage.getItem("registerEmail"); // Getting stored email and password for comparison
     const storedPassword = localStorage.getItem("registerPassword");
 
+    // Clear previous messages
     document.getElementById("login-msg1").innerHTML = "";
     document.getElementById("login-msg2").innerHTML = "";
 
+    // Validate input fields
     if (email === "") {
         document.getElementById("login-msg1").innerHTML = "Please enter your email.";
         return;
@@ -103,17 +136,19 @@ function login() {
     } else if (password === "") {
         document.getElementById("login-msg2").innerHTML = "Please enter your password.";
         return;
-    } else if (email === storedEmail && password === storedPassword) {
-        // Set logout button to display block
+    }
+
+    // Check credentials
+    if (email === storedEmail && password === storedPassword) {
         alert("Login successful!");
+        localStorage.setItem("loginStatus", "true"); // Correctly setting login status
+        window.location.href = "index.html"; // Redirecting after updating localStorage
     } else {
         document.getElementById("login-msg2").innerHTML = "Invalid Credentials!";
+        return;
     }
-    window.location.href = "index.html";
-    document.getElementById("sidebar-logout").style.display = "block";
-        
-    
 }
+
 
 // Logic for loading data from JSON, displaying it, and saving items to cart
 let products = null;
@@ -164,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let container = document.querySelector('.container');
             let close = document.querySelector('.close');
 
-            iconCart.addEventListener('click', function () {
+            iconCart.addEventListener('click', () => {
                 if (cart.style.right == '-100%') {
                     cart.style.right = '0';
                     container.style.transform = 'translateX(-400px)';
@@ -297,7 +332,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    
+
 
     // Checkout Page Logic
     function setupCheckoutPage() {
