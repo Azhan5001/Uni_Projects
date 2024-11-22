@@ -41,28 +41,28 @@
             <div class="right">
                 <h1>Checkout</h1>
 
-                <form class="form" id="checkoutForm" action="" method="post">
+                <form class="form" id="checkoutForm" action="index.html" method="post">
                     <div class="group">
                         <label for="name">Full Name</label>
-                        <input type="text" name="name" id="name">
+                        <input type="text" name="name" id="name" required>
                         <p class="error" id="nameError"></p>
                     </div>
 
                     <div class="group">
                         <label for="phone">Phone Number</label>
-                        <input type="text" name="phone" id="phone">
+                        <input type="text" name="phone" id="phone" required>
                         <p class="error" id="phoneError"></p>
                     </div>
 
                     <div class="group">
                         <label for="address">Address</label>
-                        <input type="text" name="address" id="address">
+                        <input type="text" name="address" id="address" required>
                         <p class="error" id="addressError"></p>
                     </div>
 
                     <div class="group">
                         <label for="country">Country</label>
-                        <select name="country" id="country">
+                        <select name="country" id="country" required>
                             <option value="">Choose...</option>
                             <option value="malaysia">Malaysia</option>
                         </select>
@@ -71,7 +71,7 @@
 
                     <div class="group">
                         <label for="city">City</label>
-                        <select name="city" id="city">
+                        <select name="city" id="city" required>
                             <option value="">Choose...</option>
                             <option value="kuala-lumpur">Kuala Lumpur</option>
                             <option value="george-town">Kuching</option>
@@ -95,7 +95,7 @@
             </div>
         </div>
     </div>
-    <!---------------- FOOTER SECTION ----------------->
+    <!--================= FOOTER SECTION =================-->
     <footer class="footer">
         <div class="footer-content">
             <!-- About Us Column -->

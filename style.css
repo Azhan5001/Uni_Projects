@@ -93,7 +93,6 @@ nav li:first-child {
     bottom: 2px; 
     display: block;
 }
-
 #sidebar-active,
 #sidebar-close {
     display: none;
@@ -1471,6 +1470,14 @@ header .totalQuantity {
     .icon {
         display: none;
     }
+    #cartIconIndex{
+        display: block;
+    }
+    #cartIconIndex{
+        display: block;
+        position: relative;
+        top: 20%;
+    }        
 
     #menu-button {
         display: block;
